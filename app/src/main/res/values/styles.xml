@@ -1,0 +1,39 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/color_background</item>
+
+    </style>
+
+    <style name="TextInputLabel" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/test_size</item>
+        <item name="android:textColorHint">@color/text_color</item>
+        <item name="colorAccent">@color/text_color</item>
+        <item name="colorControlNormal">@android:color/white</item>
+    </style>
+
+    <style name="TextShadowDisable">
+        <item name="android:shadowColor">@color/color_text_shadow</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">0</item>
+        <item name="android:textColorHint">@color/text_color</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">@dimen/test_size</item>
+    </style>
+
+    <style name="TextShadowEnable">
+        <item name="android:shadowColor">@color/color_text_shadow</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+        <item name="android:textColorHint">@color/text_color</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">@dimen/test_size</item>
+    </style>
+
+
+</resources>

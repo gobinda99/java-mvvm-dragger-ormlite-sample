@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Test</string>
+
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="contact_support">Contact support</string>
+    <string name="login">Login</string>
+    <string name="create_account">Create account</string>
+    <string name="ok">OK</string>
+
+
+    <!--Validation Error Message-->
+    <string name="email_empty">Please enter email.</string>
+    <string name="email_incorrect">Please enter valid email.</string>
+    <string name="email_not_exit">Email not registered.</string>
+    <string name="email_already_registered">Email already registered.</string>
+    <string name="password_empty">Please enter password.</string>
+    <string name="password_incorrect">Password must be 8 characters including at least 1 uppercase letter, 1 lowercase letter and 1 digit. </string>
+    <string name="password_not_match">Wrong password.</string>
+    <string name="account_created_successful">Account created successful. </string>
+    <string name="login_successful">Successfully logged in.</string>
+
+
+</resources>

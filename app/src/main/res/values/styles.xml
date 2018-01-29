@@ -5,6 +5,9 @@
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@color/color_background</item>
 
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+
     </style>
 
     <style name="TextInputLabel" parent="TextAppearance.AppCompat">

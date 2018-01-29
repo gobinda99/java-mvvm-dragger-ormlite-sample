@@ -8,7 +8,7 @@
     </style>
 
     <style name="TextInputLabel" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">@dimen/test_size</item>
+        <item name="android:textSize">@dimen/test_size_14sp</item>
         <item name="android:textColorHint">@color/text_color</item>
         <item name="colorAccent">@color/text_color</item>
         <item name="colorControlNormal">@android:color/white</item>
@@ -21,7 +21,7 @@
         <item name="android:shadowRadius">0</item>
         <item name="android:textColorHint">@color/text_color</item>
         <item name="android:textColor">@color/text_color</item>
-        <item name="android:textSize">@dimen/test_size</item>
+        <item name="android:textSize">@dimen/test_size_14sp</item>
     </style>
 
     <style name="TextShadowEnable">
@@ -32,7 +32,7 @@
         <item name="android:textColorHint">@color/text_color</item>
         <item name="android:textColor">@color/text_color</item>
         <item name="android:maxLines">1</item>
-        <item name="android:textSize">@dimen/test_size</item>
+        <item name="android:textSize">@dimen/test_size_14sp</item>
     </style>
 
 

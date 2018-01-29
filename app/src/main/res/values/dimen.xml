@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="test_size">14sp</dimen>
+    <dimen name="test_size_14sp">14sp</dimen>
+    <dimen name="test_size_16sp">16sp</dimen>
     <dimen name="eight_dp">8dp</dimen>
-    <dimen name="two_dp">2dp</dimen>
+    <dimen name="two_dp">8dp</dimen>
     <dimen name="fifty_dp">50dp</dimen>
 </resources>

@@ -9,6 +9,10 @@
 
         <import type="android.view.View"/>
 
+       <variable
+            name="listener"
+            type="com.gobinda.test.ui.registerLogin.RegisterLoginActionListener"/>
+
         <variable
             name="viewModel"
             type="com.gobinda.test.ui.registerLogin.RegisterLoginViewModel"/>
@@ -99,7 +103,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/two_dp"
                     android:background="@drawable/button_login"
-                    android:onClick="@{() -> viewModel.onLoginClick()}"
+                    android:onClick="@{() -> listener.onLoginClick()}"
                     android:text="@string/login"
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"
@@ -113,7 +117,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/eight_dp"
                     android:background="@drawable/button_create_acount"
-                    android:onClick="@{() -> viewModel.onCreateAccountClick()}"
+                    android:onClick="@{() -> listener.onCreateAccountClick()}"
                     android:text="@string/create_account"
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"

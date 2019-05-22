@@ -22,22 +22,22 @@ public class RegisterLoginViewModel extends BaseViewModel<RegisterLoginNavigator
     }
 
 
-    /**
-     * This method is called from xml of the  RegisterLoginActivity
-     * When the login button is clicked
-     */
-    public void onLoginClick() {
-        getNavigator().login();
-    }
-
-
-    /**
-     * This method is called from xml of the  RegisterLoginActivity
-     * When the Create account button is clicked
-     */
-    public void onCreateAccountClick() {
-        getNavigator().createAccount();
-    }
+//    /**
+//     * This method is called from xml of the  RegisterLoginActivity
+//     * When the login button is clicked
+//     */
+//    public void onLoginClick() {
+//        getNavigator().login();
+//    }
+//
+//
+//    /**
+//     * This method is called from xml of the  RegisterLoginActivity
+//     * When the Create account button is clicked
+//     */
+//    public void onCreateAccountClick() {
+//        getNavigator().createAccount();
+//    }
 
 
     /**

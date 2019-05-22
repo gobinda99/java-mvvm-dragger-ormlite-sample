@@ -16,7 +16,7 @@ import de.keyboardsurfer.android.widget.crouton.Style;
 /**
  * Register Login Activity Class
  */
-public class RegisterLoginActivity extends BaseActivity<ActivityRegisterLoginBinding, RegisterLoginViewModel> implements RegisterLoginNavigator {
+public class RegisterLoginActivity extends BaseActivity<ActivityRegisterLoginBinding, RegisterLoginViewModel> implements RegisterLoginNavigator, RegisterLoginActionListener {
 
     @Inject
     RegisterLoginViewModel mViewModel;
@@ -28,6 +28,7 @@ public class RegisterLoginActivity extends BaseActivity<ActivityRegisterLoginBin
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mBinding = getViewDataBinding();
+        mBinding.setListener(this);
         mViewModel.setNavigator(this);
     }
 
@@ -48,7 +49,16 @@ public class RegisterLoginActivity extends BaseActivity<ActivityRegisterLoginBin
     }
 
     @Override
-    public void login() {
+    public void onLoginClick() {
+       login();
+    }
+
+    @Override
+    public void onCreateAccountClick() {
+      createAccount();
+    }
+
+    private void login() {
         clickableButton(false);
         String email = mBinding.email.getText().toString();
         String password = mBinding.password.getText().toString();
@@ -58,8 +68,7 @@ public class RegisterLoginActivity extends BaseActivity<ActivityRegisterLoginBin
         }
     }
 
-    @Override
-    public void createAccount() {
+    private void createAccount() {
         clickableButton(false);
         String email = mBinding.email.getText().toString();
         String password = mBinding.password.getText().toString();

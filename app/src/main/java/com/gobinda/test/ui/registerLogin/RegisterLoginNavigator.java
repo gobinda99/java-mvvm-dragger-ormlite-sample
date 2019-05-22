@@ -7,15 +7,15 @@ package com.gobinda.test.ui.registerLogin;
  */
 public interface RegisterLoginNavigator {
 
-    /**
-     * calls to login a account
-     */
-    void login();
-
-    /**
-     * calls to create a account
-     */
-    void createAccount();
+//    /**
+//     * calls to login a account
+//     */
+//    void login();
+//
+//    /**
+//     * calls to create a account
+//     */
+//    void createAccount();
 
     /**
      * calls when login is success

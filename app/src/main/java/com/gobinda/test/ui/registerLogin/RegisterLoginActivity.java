@@ -30,6 +30,23 @@ public class RegisterLoginActivity extends BaseActivity<ActivityRegisterLoginBin
         mBinding = getViewDataBinding();
         mBinding.setListener(this);
         mViewModel.setNavigator(this);
+        mViewModel.getHandleError().observe(this, errorType -> {
+            clickableButton(true);
+            showToastMessage(errorType.getMessageResId(), Style.ALERT);
+        });
+        mViewModel.getThrowableError().observe(this, throwable -> clickableButton(true));
+        mViewModel.getAccountCreated().observe(this, booleanEvent -> {
+            if (!booleanEvent.isHandled()) {
+                showToastMessage(R.string.account_created_successful, Style.CONFIRM);
+                resetUi();
+            }
+        });
+        mViewModel.getLoginSucceed().observe(this, userEvent -> {
+            if (userEvent.getContentIfNotHandled() != null) {
+                resetUi();
+                DialogUtils.showMessage(this, getString(R.string.login_successful));
+            }
+        });
     }
 
 
@@ -70,7 +87,7 @@ public class RegisterLoginActivity extends BaseActivity<ActivityRegisterLoginBin
 
     private void createAccount() {
         clickableButton(false);
-        String email = mBinding.email.getText().toString();
+            String email = mBinding.email.getText().toString();
         String password = mBinding.password.getText().toString();
         if (mViewModel.validateInput(email, password)) {
             hideKeyboard();
@@ -78,11 +95,11 @@ public class RegisterLoginActivity extends BaseActivity<ActivityRegisterLoginBin
         }
     }
 
-    @Override
-    public void loginSuccessful() {
-        resetUi();
-        DialogUtils.showMessage(this, getString(R.string.login_successful));
-    }
+//    @Override
+//    public void loginSuccessful() {
+//        resetUi();
+//        DialogUtils.showMessage(this, getString(R.string.login_successful));
+//    }
 
     private void resetUi() {
         mBinding.email.setText("");
@@ -91,22 +108,22 @@ public class RegisterLoginActivity extends BaseActivity<ActivityRegisterLoginBin
         clickableButton(true);
     }
 
-    @Override
-    public void createAccountSuccessful() {
-        showToastMessage(R.string.account_created_successful, Style.CONFIRM);
-        resetUi();
-    }
+//    @Override
+//    public void createAccountSuccessful() {
+//        showToastMessage(R.string.account_created_successful, Style.CONFIRM);
+//        resetUi();
+//    }
 
-    @Override
-    public void handleError(Throwable throwable) {
-        clickableButton(true);
-    }
-
-    @Override
-    public void handleError(ValidationErrorType validationErrorType) {
-        clickableButton(true);
-        showToastMessage(validationErrorType.getMessageResId(), Style.ALERT);
-    }
+//    @Override
+//    public void handleError(Throwable throwable) {
+//        clickableButton(true);
+//    }
+//
+//    @Override
+//    public void handleError(ValidationErrorType validationErrorType) {
+//        clickableButton(true);
+//        showToastMessage(validationErrorType.getMessageResId(), Style.ALERT);
+//    }
 
     private void clickableButton(boolean enable) {
         mBinding.login.setClickable(enable);

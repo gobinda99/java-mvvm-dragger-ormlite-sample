@@ -20,25 +20,25 @@ public interface RegisterLoginNavigator {
     /**
      * calls when login is success
      */
-    void loginSuccessful();
-
-    /**
-     * calls when create account is success
-     */
-    void createAccountSuccessful();
+//    void loginSuccessful();
+//
+//    /**
+//     * calls when create account is success
+//     */
+//    void createAccountSuccessful();
 
     /**
      * Calls when an exception occurs
      *
      * @param throwable
      */
-    void handleError(Throwable throwable);
-
-    /**
-     * To handle of validationErrorType
-     *
-     * @param validationErrorType
-     */
-    void handleError(ValidationErrorType validationErrorType);
+//    void handleError(Throwable throwable);
+//
+//    /**
+//     * To handle of validationErrorType
+//     *
+//     * @param validationErrorType
+//     */
+//    void handleError(ValidationErrorType validationErrorType);
 
 }

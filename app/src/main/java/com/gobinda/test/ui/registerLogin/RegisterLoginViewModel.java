@@ -1,11 +1,14 @@
 package com.gobinda.test.ui.registerLogin;
 
 
+import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.MutableLiveData;
 import android.text.TextUtils;
 
 import com.gobinda.test.data.DataManager;
 import com.gobinda.test.data.model.User;
 import com.gobinda.test.ui.base.BaseViewModel;
+import com.gobinda.test.utils.Event;
 import com.gobinda.test.utils.Validator;
 import com.gobinda.test.utils.rx.SchedulerProvider;
 
@@ -16,11 +19,16 @@ import timber.log.Timber;
  */
 public class RegisterLoginViewModel extends BaseViewModel<RegisterLoginNavigator> {
 
+
+    private final MutableLiveData<Throwable> mThrowableError = new MutableLiveData<>();
+    private final MutableLiveData<ValidationErrorType> mHandleError = new MutableLiveData<>();
+    private final MutableLiveData<Event<User>> mLoginSucceed = new MutableLiveData<>();
+    private final MutableLiveData<Event<Boolean>> mAccountCreated = new MutableLiveData<>();
+
     public RegisterLoginViewModel(DataManager dataManager,
                                   SchedulerProvider schedulerProvider) {
         super(dataManager, schedulerProvider);
     }
-
 
 //    /**
 //     * This method is called from xml of the  RegisterLoginActivity
@@ -42,6 +50,7 @@ public class RegisterLoginViewModel extends BaseViewModel<RegisterLoginNavigator
 
     /**
      * This method is called after input validation success
+     *
      * @param email
      * @param password
      */
@@ -53,13 +62,14 @@ public class RegisterLoginViewModel extends BaseViewModel<RegisterLoginNavigator
                 .subscribe(created -> {
                     setIsLoading(false);
                     if (created) {
-                        getNavigator().createAccountSuccessful();
+//                        getNavigator().createAccountSuccessful();
+                        mAccountCreated.setValue(new Event<>(created));
                     } else {
-                        getNavigator().handleError(ValidationErrorType.EMAIL_ALREADY_EXIST);
+                        mHandleError.setValue(ValidationErrorType.EMAIL_ALREADY_EXIST);
                     }
                 }, throwable -> {
                     setIsLoading(false);
-                    getNavigator().handleError(throwable);
+                    mThrowableError.setValue(throwable);
                     Timber.e(throwable, "Create user exp");
                 }));
 
@@ -68,6 +78,7 @@ public class RegisterLoginViewModel extends BaseViewModel<RegisterLoginNavigator
 
     /**
      * This method is called after input validation success
+     *
      * @param email
      * @param password
      */
@@ -79,17 +90,18 @@ public class RegisterLoginViewModel extends BaseViewModel<RegisterLoginNavigator
                 .subscribe(optUser -> {
                     setIsLoading(false);
                     if (optUser.isEmpty()) {
-                        getNavigator().handleError(ValidationErrorType.EMAIL_NOT_EXIST);
+                        mHandleError.setValue(ValidationErrorType.EMAIL_NOT_EXIST);
                     } else {
                         if (optUser.get().getPassword().equals(password)) {
-                            getNavigator().loginSuccessful();
+//                            getNavigator().loginSuccessful();
+                            mLoginSucceed.setValue(new Event<>(optUser.get()));
                         } else {
-                            getNavigator().handleError(ValidationErrorType.PASSWORD_NOT_MATCHED);
+                            mHandleError.setValue(ValidationErrorType.PASSWORD_NOT_MATCHED);
                         }
                     }
                 }, throwable -> {
                     setIsLoading(false);
-                    getNavigator().handleError(throwable);
+                    mThrowableError.setValue(throwable);
                     Timber.e(throwable, "Get user exp");
                 }));
 
@@ -104,20 +116,20 @@ public class RegisterLoginViewModel extends BaseViewModel<RegisterLoginNavigator
      */
     boolean validateInput(String email, String password) {
         if (TextUtils.isEmpty(email)) {
-            getNavigator().handleError(ValidationErrorType.EMAIL_EMPTY);
+            mHandleError.setValue(ValidationErrorType.EMAIL_EMPTY);
             return false;
         }
         if (!Validator.isValidEmail(email)) {
-            getNavigator().handleError(ValidationErrorType.EMAIL_INCORRECT);
+            mHandleError.setValue(ValidationErrorType.EMAIL_INCORRECT);
             return false;
         }
         if (TextUtils.isEmpty(password)) {
-            getNavigator().handleError(ValidationErrorType.PASSWORD_EMPTY);
+            mHandleError.setValue(ValidationErrorType.PASSWORD_EMPTY);
             return false;
         }
 
         if (!Validator.isValidPassword(password)) {
-            getNavigator().handleError(ValidationErrorType.PASSWORD_INCORRECT);
+            mHandleError.setValue(ValidationErrorType.PASSWORD_INCORRECT);
             return false;
         }
 
@@ -126,5 +138,19 @@ public class RegisterLoginViewModel extends BaseViewModel<RegisterLoginNavigator
         return true;
     }
 
+    LiveData<Throwable> getThrowableError() {
+        return mThrowableError;
+    }
 
+    LiveData<ValidationErrorType> getHandleError() {
+        return mHandleError;
+    }
+
+    MutableLiveData<Event<User>> getLoginSucceed() {
+        return mLoginSucceed;
+    }
+
+    MutableLiveData<Event<Boolean>> getAccountCreated() {
+        return mAccountCreated;
+    }
 }

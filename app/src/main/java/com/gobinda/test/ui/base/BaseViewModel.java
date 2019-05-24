@@ -10,11 +10,9 @@ import io.reactivex.disposables.CompositeDisposable;
 
 /**
  * Base ViewModel class
- * @param <N>
  */
-public abstract class BaseViewModel<N> extends ViewModel {
+public abstract class BaseViewModel extends ViewModel {
 
-    private N mNavigator;
     private final DataManager mDataManager;
     private final SchedulerProvider mSchedulerProvider;
     private final ObservableBoolean mIsLoading = new ObservableBoolean(false);
@@ -28,13 +26,6 @@ public abstract class BaseViewModel<N> extends ViewModel {
         this.mCompositeDisposable = new CompositeDisposable();
     }
 
-    public void setNavigator(N navigator) {
-        this.mNavigator = navigator;
-    }
-
-    public N getNavigator() {
-        return mNavigator;
-    }
 
     public DataManager getDataManager() {
         return mDataManager;

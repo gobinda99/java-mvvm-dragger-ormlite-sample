@@ -17,7 +17,7 @@ import timber.log.Timber;
 /**
  * Register Login View Model
  */
-public class RegisterLoginViewModel extends BaseViewModel<RegisterLoginNavigator> {
+public class RegisterLoginViewModel extends BaseViewModel {
 
 
     private final MutableLiveData<Throwable> mThrowableError = new MutableLiveData<>();

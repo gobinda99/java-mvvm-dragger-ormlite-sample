@@ -16,7 +16,8 @@ import de.keyboardsurfer.android.widget.crouton.Style;
 /**
  * Register Login Activity Class
  */
-public class RegisterLoginActivity extends BaseActivity<ActivityRegisterLoginBinding, RegisterLoginViewModel> implements RegisterLoginNavigator, RegisterLoginActionListener {
+public class RegisterLoginActivity extends BaseActivity<ActivityRegisterLoginBinding,
+        RegisterLoginViewModel> implements  RegisterLoginActionListener {
 
     @Inject
     RegisterLoginViewModel mViewModel;
@@ -29,12 +30,16 @@ public class RegisterLoginActivity extends BaseActivity<ActivityRegisterLoginBin
         super.onCreate(savedInstanceState);
         mBinding = getViewDataBinding();
         mBinding.setListener(this);
-        mViewModel.setNavigator(this);
+        setObservablesOfViewModel();
+    }
+
+    private void setObservablesOfViewModel() {
         mViewModel.getHandleError().observe(this, errorType -> {
             clickableButton(true);
             showToastMessage(errorType.getMessageResId(), Style.ALERT);
         });
-        mViewModel.getThrowableError().observe(this, throwable -> clickableButton(true));
+        mViewModel.getThrowableError().observe(this, throwable ->
+                clickableButton(true));
         mViewModel.getAccountCreated().observe(this, booleanEvent -> {
             if (!booleanEvent.isHandled()) {
                 showToastMessage(R.string.account_created_successful, Style.CONFIRM);
@@ -95,11 +100,6 @@ public class RegisterLoginActivity extends BaseActivity<ActivityRegisterLoginBin
         }
     }
 
-//    @Override
-//    public void loginSuccessful() {
-//        resetUi();
-//        DialogUtils.showMessage(this, getString(R.string.login_successful));
-//    }
 
     private void resetUi() {
         mBinding.email.setText("");
@@ -108,22 +108,6 @@ public class RegisterLoginActivity extends BaseActivity<ActivityRegisterLoginBin
         clickableButton(true);
     }
 
-//    @Override
-//    public void createAccountSuccessful() {
-//        showToastMessage(R.string.account_created_successful, Style.CONFIRM);
-//        resetUi();
-//    }
-
-//    @Override
-//    public void handleError(Throwable throwable) {
-//        clickableButton(true);
-//    }
-//
-//    @Override
-//    public void handleError(ValidationErrorType validationErrorType) {
-//        clickableButton(true);
-//        showToastMessage(validationErrorType.getMessageResId(), Style.ALERT);
-//    }
 
     private void clickableButton(boolean enable) {
         mBinding.login.setClickable(enable);

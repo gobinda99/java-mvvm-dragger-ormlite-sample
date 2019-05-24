@@ -1,16 +1,16 @@
-package com.gobinda.test.ui.registerLogin;
+package com.gobinda.sample.ui.registerLogin;
 
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.text.TextUtils;
 
-import com.gobinda.test.data.DataManager;
-import com.gobinda.test.data.model.User;
-import com.gobinda.test.ui.base.BaseViewModel;
-import com.gobinda.test.utils.Event;
-import com.gobinda.test.utils.Validator;
-import com.gobinda.test.utils.rx.SchedulerProvider;
+import com.gobinda.sample.data.DataManager;
+import com.gobinda.sample.data.model.User;
+import com.gobinda.sample.ui.base.BaseViewModel;
+import com.gobinda.sample.utils.Event;
+import com.gobinda.sample.utils.Validator;
+import com.gobinda.sample.utils.rx.SchedulerProvider;
 
 import timber.log.Timber;
 

@@ -1,6 +1,6 @@
-package com.gobinda.test;
+package com.gobinda.sample;
 
-import com.gobinda.test.utils.Validator;
+import com.gobinda.sample.utils.Validator;
 
 import org.junit.Test;
 

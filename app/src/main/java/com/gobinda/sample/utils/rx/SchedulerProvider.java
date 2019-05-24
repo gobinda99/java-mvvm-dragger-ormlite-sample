@@ -1,4 +1,4 @@
-package com.gobinda.test.utils.rx;
+package com.gobinda.sample.utils.rx;
 
 import io.reactivex.Scheduler;
 

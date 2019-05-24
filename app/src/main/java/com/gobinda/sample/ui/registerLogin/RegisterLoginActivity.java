@@ -1,15 +1,15 @@
 
-package com.gobinda.test.ui.registerLogin;
+package com.gobinda.sample.ui.registerLogin;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 
-import com.gobinda.test.BR;
-import com.gobinda.test.R;
-import com.gobinda.test.di.ViewModelProviderFactory;
-import com.gobinda.test.databinding.ActivityRegisterLoginBinding;
-import com.gobinda.test.ui.base.BaseActivity;
-import com.gobinda.test.utils.DialogUtils;
+import com.gobinda.sample.BR;
+import com.gobinda.sample.R;
+import com.gobinda.sample.di.ViewModelProviderFactory;
+import com.gobinda.sample.databinding.ActivityRegisterLoginBinding;
+import com.gobinda.sample.ui.base.BaseActivity;
+import com.gobinda.sample.utils.DialogUtils;
 
 import javax.inject.Inject;
 

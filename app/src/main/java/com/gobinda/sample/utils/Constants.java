@@ -1,6 +1,6 @@
-package com.gobinda.test.utils;
+package com.gobinda.sample.utils;
 
-import com.gobinda.test.BuildConfig;
+import com.gobinda.sample.BuildConfig;
 
 /**
  * Created by gobindadeb on 26/1/18.

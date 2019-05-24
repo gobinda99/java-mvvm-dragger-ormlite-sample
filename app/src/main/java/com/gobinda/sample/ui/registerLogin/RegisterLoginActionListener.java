@@ -1,4 +1,4 @@
-package com.gobinda.test.ui.registerLogin;
+package com.gobinda.sample.ui.registerLogin;
 
 public interface RegisterLoginActionListener {
 

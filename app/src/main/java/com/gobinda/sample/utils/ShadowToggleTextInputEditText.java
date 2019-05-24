@@ -1,11 +1,11 @@
-package com.gobinda.test.utils;
+package com.gobinda.sample.utils;
 
 import android.content.Context;
 import android.support.design.widget.TextInputEditText;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.gobinda.test.R;
+import com.gobinda.sample.R;
 
 /**
  * Custom ShadowToggleTextInputEditText to show shadow on test when on focused

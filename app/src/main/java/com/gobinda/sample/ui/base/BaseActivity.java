@@ -1,5 +1,5 @@
 
-package com.gobinda.test.ui.base;
+package com.gobinda.sample.ui.base;
 
 import android.content.Context;
 import android.databinding.DataBindingUtil;

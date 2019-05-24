@@ -1,10 +1,10 @@
-package com.gobinda.test;
+package com.gobinda.sample;
 
 import android.app.Activity;
 import android.app.Application;
 
-import com.gobinda.test.data.local.db.dao.DaoUtils;
-import com.gobinda.test.di.component.DaggerAppComponent;
+import com.gobinda.sample.data.local.db.dao.DaoUtils;
+import com.gobinda.sample.di.component.DaggerAppComponent;
 
 import javax.inject.Inject;
 

@@ -1,10 +1,10 @@
-package com.gobinda.test.data.local.db.dao;
+package com.gobinda.sample.data.local.db.dao;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.gobinda.test.data.model.User;
-import com.gobinda.test.utils.Constants;
+import com.gobinda.sample.data.model.User;
+import com.gobinda.sample.utils.Constants;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;

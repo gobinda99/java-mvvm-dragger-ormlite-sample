@@ -1,4 +1,4 @@
-package com.gobinda.test
+package com.gobinda.sample
 
 import org.junit.Test
 

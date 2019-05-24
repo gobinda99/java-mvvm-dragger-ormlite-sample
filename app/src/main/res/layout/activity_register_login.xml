@@ -3,7 +3,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:fitsSystemWindows="true"
-        tools:context="com.gobinda.test.ui.registerLogin.RegisterLoginActivity">
+        tools:context="com.gobinda.sample.ui.registerLogin.RegisterLoginActivity">
 
     <data>
 
@@ -11,11 +11,11 @@
 
        <variable
             name="listener"
-            type="com.gobinda.test.ui.registerLogin.RegisterLoginActionListener"/>
+            type="com.gobinda.sample.ui.registerLogin.RegisterLoginActionListener"/>
 
         <variable
             name="viewModel"
-            type="com.gobinda.test.ui.registerLogin.RegisterLoginViewModel"/>
+            type="com.gobinda.sample.ui.registerLogin.RegisterLoginViewModel"/>
 
     </data>
 
@@ -66,7 +66,7 @@
                     android:theme="@style/TextInputLabel"
                     >
 
-                    <com.gobinda.test.utils.ShadowToggleTextInputEditText
+                    <com.gobinda.sample.utils.ShadowToggleTextInputEditText
                         android:id="@+id/email"
                         style="@style/TextShadowEnable"
                         android:layout_width="match_parent"
@@ -84,7 +84,7 @@
                     android:theme="@style/TextInputLabel"
                     >
 
-                    <com.gobinda.test.utils.ShadowToggleTextInputEditText
+                    <com.gobinda.sample.utils.ShadowToggleTextInputEditText
                         android:id="@+id/password"
                         style="@style/TextShadowEnable"
                         android:layout_width="match_parent"

@@ -1,12 +1,12 @@
 
-package com.gobinda.test.data;
+package com.gobinda.sample.data;
 
 import android.content.Context;
 
 
-import com.gobinda.test.data.local.db.dao.DbHelper;
-import com.gobinda.test.data.model.User;
-import com.gobinda.test.utils.Optional;
+import com.gobinda.sample.data.local.db.dao.DbHelper;
+import com.gobinda.sample.data.model.User;
+import com.gobinda.sample.utils.Optional;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

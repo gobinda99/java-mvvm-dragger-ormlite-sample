@@ -1,6 +1,6 @@
-package com.gobinda.test.ui.registerLogin;
+package com.gobinda.sample.ui.registerLogin;
 
-import com.gobinda.test.R;
+import com.gobinda.sample.R;
 
 /**
  * Validation Error types

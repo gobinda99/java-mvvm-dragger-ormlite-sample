@@ -1,8 +1,8 @@
-package com.gobinda.test.data.local.db.dao;
+package com.gobinda.sample.data.local.db.dao;
 
 
-import com.gobinda.test.data.model.User;
-import com.gobinda.test.utils.Optional;
+import com.gobinda.sample.data.model.User;
+import com.gobinda.sample.utils.Optional;
 
 import io.reactivex.Observable;
 

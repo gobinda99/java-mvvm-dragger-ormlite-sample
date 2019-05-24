@@ -1,4 +1,4 @@
-package com.gobinda.test.utils;
+package com.gobinda.sample.utils;
 
 import java.util.regex.Pattern;
 

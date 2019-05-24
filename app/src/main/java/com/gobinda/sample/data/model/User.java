@@ -1,4 +1,4 @@
-package com.gobinda.test.data.model;
+package com.gobinda.sample.data.model;
 
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;

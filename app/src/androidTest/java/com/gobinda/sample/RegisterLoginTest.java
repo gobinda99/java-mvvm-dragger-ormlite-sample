@@ -1,4 +1,4 @@
-package com.gobinda.test;
+package com.gobinda.sample;
 
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
@@ -10,7 +10,7 @@ import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.support.test.filters.LargeTest;
 
-import com.gobinda.test.ui.registerLogin.RegisterLoginActivity;
+import com.gobinda.sample.ui.registerLogin.RegisterLoginActivity;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;

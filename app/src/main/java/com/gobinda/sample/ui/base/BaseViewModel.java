@@ -1,10 +1,10 @@
-package com.gobinda.test.ui.base;
+package com.gobinda.sample.ui.base;
 
 import android.arch.lifecycle.ViewModel;
 import android.databinding.ObservableBoolean;
 
-import com.gobinda.test.data.DataManager;
-import com.gobinda.test.utils.rx.SchedulerProvider;
+import com.gobinda.sample.data.DataManager;
+import com.gobinda.sample.utils.rx.SchedulerProvider;
 
 import io.reactivex.disposables.CompositeDisposable;
 

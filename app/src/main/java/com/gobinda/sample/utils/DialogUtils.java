@@ -1,9 +1,9 @@
-package com.gobinda.test.utils;
+package com.gobinda.sample.utils;
 
 import android.content.Context;
 import android.support.v7.app.AlertDialog;
 
-import com.gobinda.test.R;
+import com.gobinda.sample.R;
 
 /**
  * Dialog Utils Class

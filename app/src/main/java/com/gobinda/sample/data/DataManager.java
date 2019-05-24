@@ -1,11 +1,7 @@
 
-package com.gobinda.test.data;
+package com.gobinda.sample.data;
 
-import com.gobinda.test.data.local.db.dao.DbHelper;
-
-import java.util.List;
-
-import io.reactivex.Observable;
+import com.gobinda.sample.data.local.db.dao.DbHelper;
 
 
 /**

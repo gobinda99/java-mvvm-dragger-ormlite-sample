@@ -1,4 +1,4 @@
-package com.gobinda.test.di.module;
+package com.gobinda.sample.di.module;
 
 import android.app.Application;
 import android.content.Context;
@@ -8,12 +8,12 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 
-import com.gobinda.test.data.AppDataManager;
-import com.gobinda.test.data.DataManager;
-import com.gobinda.test.data.local.db.dao.AppDbHelper;
-import com.gobinda.test.data.local.db.dao.ORMLiteHelper;
-import com.gobinda.test.utils.rx.SchedulerProvider;
-import com.gobinda.test.utils.rx.AppSchedulerProvider;
+import com.gobinda.sample.data.AppDataManager;
+import com.gobinda.sample.data.DataManager;
+import com.gobinda.sample.data.local.db.dao.AppDbHelper;
+import com.gobinda.sample.data.local.db.dao.ORMLiteHelper;
+import com.gobinda.sample.utils.rx.SchedulerProvider;
+import com.gobinda.sample.utils.rx.AppSchedulerProvider;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 
 /**

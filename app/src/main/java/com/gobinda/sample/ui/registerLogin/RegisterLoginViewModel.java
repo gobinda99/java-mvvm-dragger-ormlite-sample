@@ -25,27 +25,12 @@ public class RegisterLoginViewModel extends BaseViewModel {
     private final MutableLiveData<Event<User>> mLoginSucceed = new MutableLiveData<>();
     private final MutableLiveData<Event<Boolean>> mAccountCreated = new MutableLiveData<>();
 
+
+
     public RegisterLoginViewModel(DataManager dataManager,
                                   SchedulerProvider schedulerProvider) {
         super(dataManager, schedulerProvider);
     }
-
-//    /**
-//     * This method is called from xml of the  RegisterLoginActivity
-//     * When the login button is clicked
-//     */
-//    public void onLoginClick() {
-//        getNavigator().login();
-//    }
-//
-//
-//    /**
-//     * This method is called from xml of the  RegisterLoginActivity
-//     * When the Create account button is clicked
-//     */
-//    public void onCreateAccountClick() {
-//        getNavigator().createAccount();
-//    }
 
 
     /**
@@ -62,7 +47,6 @@ public class RegisterLoginViewModel extends BaseViewModel {
                 .subscribe(created -> {
                     setIsLoading(false);
                     if (created) {
-//                        getNavigator().createAccountSuccessful();
                         mAccountCreated.setValue(new Event<>(created));
                     } else {
                         mHandleError.setValue(ValidationErrorType.EMAIL_ALREADY_EXIST);

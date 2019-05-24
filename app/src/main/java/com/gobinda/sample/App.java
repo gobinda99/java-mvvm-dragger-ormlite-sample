@@ -16,7 +16,7 @@ import timber.log.Timber;
  * Application Class
  */
 
-public class App  extends Application implements HasActivityInjector {
+public class App extends Application implements HasActivityInjector {
 
     @Inject
     DispatchingAndroidInjector<Activity> mInjector;

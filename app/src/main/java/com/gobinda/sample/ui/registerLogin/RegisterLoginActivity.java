@@ -1,10 +1,12 @@
 
 package com.gobinda.test.ui.registerLogin;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 
 import com.gobinda.test.BR;
 import com.gobinda.test.R;
+import com.gobinda.test.di.ViewModelProviderFactory;
 import com.gobinda.test.databinding.ActivityRegisterLoginBinding;
 import com.gobinda.test.ui.base.BaseActivity;
 import com.gobinda.test.utils.DialogUtils;
@@ -20,7 +22,9 @@ public class RegisterLoginActivity extends BaseActivity<ActivityRegisterLoginBin
         RegisterLoginViewModel> implements  RegisterLoginActionListener {
 
     @Inject
-    RegisterLoginViewModel mViewModel;
+    ViewModelProviderFactory mFactory;
+
+    private  RegisterLoginViewModel mViewModel;
 
     ActivityRegisterLoginBinding mBinding;
 
@@ -57,6 +61,7 @@ public class RegisterLoginActivity extends BaseActivity<ActivityRegisterLoginBin
 
     @Override
     public RegisterLoginViewModel getViewModel() {
+        mViewModel = ViewModelProviders.of(this, mFactory).get(RegisterLoginViewModel.class);
         return mViewModel;
     }
 
